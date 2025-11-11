@@ -38,7 +38,7 @@ def get_prediction():
     baby_df=pd.DataFrame(baby_data_cleand)
     
     #load machine learning training model
-    with open("model/model.pkl",'rb') as obj:
+    with open("model.pkl",'rb') as obj:
        model = pickle.load(obj)
     
     #make prediction on user data
@@ -49,7 +49,7 @@ def get_prediction():
     #return response in a json format
     response={"Prediction":prediction}
 
-    return jsonify(response)
+    #return jsonify(response)
 
     return render_template("index.html",prediction=prediction)
 
